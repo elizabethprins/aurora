@@ -67,7 +67,19 @@ view model =
         [ main_ [ class "main" ]
             [ nav [ class "nav" ] []
             , article [ class "content" ]
-                []
+                [ h1 [ class "title" ] <| text_ "AUROra"
+                ]
             ]
         ]
     }
+
+
+text_ : String -> List (Html Msg)
+text_ string =
+    let
+        delay i =
+            style "transition-delay" <| (String.fromInt (i * 80) ++ "ms")
+    in
+    List.indexedMap
+        (\i s -> span [ class "title__char" ] <| List.repeat 2 (span [ delay i ] [ text s ]))
+        (String.split "" string)

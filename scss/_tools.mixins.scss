@@ -1,0 +1,5 @@
+@mixin main-wrap {
+    width: 86%;
+    max-width: $maxWidth;
+    margin: 0 auto;
+}

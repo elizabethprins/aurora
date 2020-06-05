@@ -1,13 +1,18 @@
 // Colors
 
 $white: #FFFFFF;
-$black: #373A36;
+$black: #000000;
+$greyLight: #dfdddc;
+$yellow: #f9ff82;
 
 
 // Fonts
 
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+
 $fallback: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 $fontRegular: $fallback;
+$majormono: 'Major Mono Display', monospace;
 
 
 // Breakpoints
@@ -19,3 +24,11 @@ $medium: 1024px;
 $large: 1280px;
 $huge: 1660px;
 $superHuge: 1800px;
+
+
+// Misc
+
+$maxWidth: 55rem;
+$shadow1: -0.03125em;
+$shadow2: 0.046875em;
+$shadow3: 0.0234375em;

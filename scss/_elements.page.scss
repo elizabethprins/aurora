@@ -1,3 +1,79 @@
 body {
     font-family: sans-serif;
 }
+
+.content {
+    @include main-wrap;
+}
+
+.title {
+    width: fit-content;
+    margin: .75em 0 .75em auto;
+    position: relative;
+    font-family: $majormono;
+    font-size: 5rem;
+    line-height: 1;
+    color: $black;
+    background-image: url('/assets/og-banner_v.png');
+    background-size: cover;
+    cursor: default;
+
+    &:hover {
+        .title__char {
+            span {
+                &:first-of-type {
+                    opacity: .6;
+                    transform: translate(0);
+                }
+
+                &:nth-of-type(2) {
+                    text-shadow: $shadow3 $shadow1 1px $yellow;
+                }
+            }
+        }
+    }
+
+    @include breakpoint($tiny) {
+        margin: .75em auto;
+        display: flex;
+        font-size: 6rem;
+        background-image: url('/assets/og-banner.png');
+    }
+
+    @include breakpoint($small) {
+        font-size: 9rem;
+    }
+
+    @include breakpoint($medium) {
+        font-size: 12rem;
+    }
+}
+
+.title__char {
+    display: flex;
+    position: relative;
+
+    span {
+        width: 100%;
+        transition: all .4s;
+
+        &:first-of-type {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: $black;
+            transform: translate($shadow1, $shadow2);
+        }
+
+        &:nth-of-type(2) {
+            text-shadow: $shadow1 $shadow2 1px $greyLight;
+            background: $white;
+            mix-blend-mode: lighten;
+        }
+    }
+
+    @include breakpoint($tiny) {
+        text-align: center;
+    }
+}
