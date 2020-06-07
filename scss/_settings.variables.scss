@@ -3,7 +3,9 @@
 $white: #FFFFFF;
 $black: #000000;
 $greyLight: #dfdddc;
-$yellow: #f9ff82;
+$yellow1: #fc9c54;
+$yellow2: #ffe373;
+$blue: #2600E6;
 
 
 // Fonts
@@ -11,7 +13,6 @@ $yellow: #f9ff82;
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
 
 $fallback: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-$fontRegular: $fallback;
 $majormono: 'Major Mono Display', monospace;
 
 
@@ -29,6 +30,5 @@ $superHuge: 1800px;
 // Misc
 
 $maxWidth: 55rem;
-$shadow1: -0.03125em;
-$shadow2: 0.046875em;
-$shadow3: 0.0234375em;
+$spread1: 0.046875em;
+$spread2: 0.125em;

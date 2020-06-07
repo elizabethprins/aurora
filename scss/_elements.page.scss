@@ -8,36 +8,20 @@ body {
 
 .title {
     width: fit-content;
-    margin: .75em 0 .75em auto;
+    margin: .75em auto;
+    display: flex;
     position: relative;
     font-family: $majormono;
-    font-size: 5rem;
+    font-size: 3rem;
     line-height: 1;
     color: $black;
-    background-image: url('/assets/og-banner_v.png');
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
     cursor: default;
 
-    &:hover {
-        .title__char {
-            span {
-                &:first-of-type {
-                    opacity: .6;
-                    transform: translate(0);
-                }
-
-                &:nth-of-type(2) {
-                    text-shadow: $shadow3 $shadow1 1px $yellow;
-                }
-            }
-        }
-    }
-
     @include breakpoint($tiny) {
-        margin: .75em auto;
-        display: flex;
-        font-size: 6rem;
-        background-image: url('/assets/og-banner.png');
+        font-size: 5rem;
     }
 
     @include breakpoint($small) {
@@ -45,7 +29,7 @@ body {
     }
 
     @include breakpoint($medium) {
-        font-size: 12rem;
+        font-size: 11rem;
     }
 }
 
@@ -58,22 +42,114 @@ body {
         transition: all .4s;
 
         &:first-of-type {
-            opacity: 0;
             position: absolute;
             top: 0;
             left: 0;
-            color: $black;
-            transform: translate($shadow1, $shadow2);
-        }
-
-        &:nth-of-type(2) {
-            text-shadow: $shadow1 $shadow2 1px $greyLight;
-            background: $white;
-            mix-blend-mode: lighten;
         }
     }
 
     @include breakpoint($tiny) {
         text-align: center;
+    }
+}
+
+.title--eclipse {
+    background-image: url('/assets/autumn.jpg');
+
+    .title__char {
+        span {
+            &:first-of-type {
+                opacity: 0;
+                transform: translate(0, -$spread1);
+            }
+
+            &:nth-of-type(2) {
+                background: $white;
+                mix-blend-mode: lighten;
+            }
+        }
+    }
+
+    &:hover {
+        .title__char {
+            span {
+                &:first-of-type {
+                    opacity: .55;
+                    transform: translate(0);
+                }
+
+                &:nth-of-type(2) {
+                    text-shadow: 0 0 $spread1 $yellow1, 0 0 $spread2 $yellow2;
+                }
+            }
+        }
+    }
+}
+
+.starry-wrapper {
+    padding: 2em;
+    background-image: url('/assets/milky-way.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .title {
+        margin: 0 auto;
+    }
+}
+
+.title--starry {
+    background-image: none;
+
+    .title__char {
+        span {
+            &:first-of-type {
+                opacity: 0;
+                background: $blue;
+                mix-blend-mode: darken;
+            }
+
+            &:nth-of-type(2) {
+                opacity: .75;
+                background: $white;
+                mix-blend-mode: lighten;
+            }
+        }
+    }
+
+    &.no-wrap {
+        -webkit-background-clip: text;
+        color: transparent;
+        background-clip: text;
+        background-image: url('/assets/milky-way-darker.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &:hover {
+        .title__char {
+            span {
+                &:first-of-type {
+                    opacity: 1;
+                }
+
+                &:nth-of-type(2) {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+
+.landscape-wrapper {
+    padding: 1em;
+    background-image: url('/assets/marsh.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .title {
+        top: .25em;
     }
 }

@@ -67,18 +67,21 @@ view model =
         [ main_ [ class "main" ]
             [ nav [ class "nav" ] []
             , article [ class "content" ]
-                [ h1 [ class "title" ] <| text_ "AUROra"
+                [ h1 [ class "title title--eclipse" ] <| text_ "AUROra" 10
+                , div [ class "starry-wrapper" ]
+                    [ h1 [ class "title title--starry" ] <| text_ "PRiNcE" 0 ]
+                , div [ class "landscape-wrapper" ] [ h1 [ class "title title--starry no-wrap" ] [ text "LOVERS" ] ]
                 ]
             ]
         ]
     }
 
 
-text_ : String -> List (Html Msg)
-text_ string =
+text_ : String -> Int -> List (Html Msg)
+text_ string delay_ =
     let
         delay i =
-            style "transition-delay" <| (String.fromInt (i * 80) ++ "ms")
+            style "transition-delay" <| (String.fromInt (i * delay_) ++ "ms")
     in
     List.indexedMap
         (\i s -> span [ class "title__char" ] <| List.repeat 2 (span [ delay i ] [ text s ]))
